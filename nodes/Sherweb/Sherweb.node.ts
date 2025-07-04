@@ -1,6 +1,14 @@
 import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 
 import { customerOperations } from './descriptions/CustomerDescription';
+import { customerCatalogsOperations, customerCatalogsFields } from './descriptions/CustomerCatalogs.Description';
+import { customerPlatformsOperations, customerPlatformsFields } from './descriptions/CustomerPlatformsDescription';
+import { platformsOperations, platformsFields } from './descriptions/PlatformsDescription';
+import { subscriptionsOperations, subscriptionsFields } from './descriptions/SubscriptionsDescription';
+import { trackingOperations, trackingFields } from './descriptions/TrackingDescription';
+import { receivableChargesOperations, receivableChargesFields } from './descriptions/ReceivableChargesDescription';
+import { ordersOperations, ordersFields } from './descriptions/OrdersDescription';
+import { payableChargesOperations, payableChargesFields } from './descriptions/PayableChargesDescription';
 
 export class Sherweb implements INodeType {
 	description: INodeTypeDescription = {
@@ -34,10 +42,31 @@ export class Sherweb implements INodeType {
 		},
 		properties: [
 			{
+				displayName: 'API Type',
+				name: 'apiType',
+				type: 'options',
+				options: [
+					{
+						name: 'Service Provider API',
+						value: 'serviceProviderApi',
+					},
+					{
+						name: 'Distributor API',
+						value: 'distributorApi',
+					},
+				],
+				default: 'serviceProviderApi',
+			},
+			{
 				displayName: 'Resource',
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
+				displayOptions: {
+					show: {
+						apiType: ['serviceProviderApi'],
+					},
+				},
 				options: [
 					{
 						name: 'Customer',
@@ -54,10 +83,6 @@ export class Sherweb implements INodeType {
 					{
 						name: 'Order',
 						value: 'orders',
-					},
-					{
-						name: 'Payable Charge',
-						value: 'payableCharge',
 					},
 					{
 						name: 'Platform',
@@ -78,8 +103,43 @@ export class Sherweb implements INodeType {
 				],
 				default: 'customer',
 			},
+			{
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				noDataExpression: true,
+				displayOptions: {
+					show: {
+						apiType: ['distributorApi'],
+					},
+				},
+				options: [
+					{
+						name: 'Payable Charge',
+						value: 'payableCharge',
+					},
+				],
+				default: 'payableCharge',
+			},
 			// Operation
 			...customerOperations,
+			...customerCatalogsOperations,
+			...customerPlatformsOperations,
+			...platformsOperations,
+			...subscriptionsOperations,
+			...trackingOperations,
+			...receivableChargesOperations,
+			...ordersOperations,
+			...payableChargesOperations,
+			// Fields
+			...customerCatalogsFields,
+			...customerPlatformsFields,
+			...platformsFields,
+			...subscriptionsFields,
+			...trackingFields,
+			...receivableChargesFields,
+			...ordersFields,
+			...payableChargesFields,
 		],
 	};
 }
