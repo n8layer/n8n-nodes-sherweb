@@ -39,3 +39,4 @@ export const customerOperations: INodeProperties[] = [
 		default: 'getMany',
 	},
 ];
+
