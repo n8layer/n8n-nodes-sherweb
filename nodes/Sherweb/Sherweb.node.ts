@@ -29,6 +29,7 @@ export class Sherweb implements INodeType {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
+				'Ocp-Apim-Subscription-Key': '={{$credentials.subscriptionKey}}',
 			},
 		},
 		properties: [

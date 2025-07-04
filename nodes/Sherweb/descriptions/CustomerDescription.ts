@@ -23,7 +23,17 @@ export const customerOperations: INodeProperties[] = [
 						method: 'GET',
 						url: '/service-provider/v1/customers',
 					},
+				output: {
+					postReceive: [
+						{
+							type: 'rootProperty',
+							properties: {
+								property: 'items',
+							},
+						},
+					],
 				},
+			},
 			},
 		],
 		default: 'getMany',

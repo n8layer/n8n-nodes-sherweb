@@ -2,7 +2,8 @@ import { ICredentialType, INodeProperties } from 'n8n-workflow';
 
 export class SherwebOAuth2Api implements ICredentialType {
 	name = 'sherwebOAuth2Api';
-	displayName = 'Sherweb API';
+	extends = ['oAuth2Api'];
+	displayName = 'Sherweb OAuth2 API';
 	documentationUrl = 'https://developers.sherweb.com/apis';
 	properties: INodeProperties[] = [
 		{
@@ -27,6 +28,16 @@ export class SherwebOAuth2Api implements ICredentialType {
 		{
 			displayName: 'Client Secret',
 			name: 'clientSecret',
+			type: 'string',
+			typeOptions: {
+				password: true,
+			},
+			required: true,
+			default: '',
+		},
+		{
+			displayName: 'Subscription Key',
+			name: 'subscriptionKey',
 			type: 'string',
 			typeOptions: {
 				password: true,
