@@ -1,6 +1,6 @@
 {
   "name": "@n8layer/n8n-nodes-sherweb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This is an n8n community node. It lets you use Sherweb in your n8n workflows.",
   "keywords": [
     "n8n-community-node-package"
