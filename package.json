@@ -5,7 +5,7 @@
   "keywords": [
     "n8n-community-node-package"
   ],
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "homepage": "https://www.n8layer.io",
   "author": {
     "name": "n8layer",
