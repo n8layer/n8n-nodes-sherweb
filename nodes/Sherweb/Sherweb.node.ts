@@ -1,5 +1,7 @@
 import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 
+import { customerOperations } from './descriptions/CustomerDescription';
+
 export class Sherweb implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Sherweb',
@@ -17,7 +19,7 @@ export class Sherweb implements INodeType {
 		usableAsTool: true,
 		credentials: [
 			{
-				name: 'SherwebOAuth2Api',
+				name: 'sherwebOAuth2Api',
 				required: true,
 			},
 		],
@@ -76,6 +78,7 @@ export class Sherweb implements INodeType {
 				default: 'customer',
 			},
 			// Operation
+			...customerOperations,
 		],
 	};
 }
