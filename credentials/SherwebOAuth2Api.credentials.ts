@@ -45,5 +45,17 @@ export class SherwebOAuth2Api implements ICredentialType {
 			required: true,
 			default: '',
 		},
+		{
+			displayName: 'Scope',
+			name: 'scope',
+			type: 'hidden',
+			default: '',
+		},
+		{
+			displayName: 'Authentication',
+			name: 'authentication',
+			type: 'hidden',
+			default: 'Header',
+		},
 	];
 }
