@@ -37,12 +37,45 @@ export class Sherweb implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'HTTP Verb',
-						value: 'httpVerb',
+						name: 'Customer',
+						value: 'customer',
+					},
+					{
+						name: 'Customer Catalog',
+						value: 'customerCatalog',
+					},
+					{
+						name: 'Customer Platform',
+						value: 'customerPlatform',
+					},
+					{
+						name: 'Order',
+						value: 'orders',
+					},
+					{
+						name: 'Payable Charge',
+						value: 'payableCharge',
+					},
+					{
+						name: 'Platform',
+						value: 'platform',
+					},
+					{
+						name: 'Receivable Charge',
+						value: 'receivableCharge',
+					},
+					{
+						name: 'Subscription',
+						value: 'subscription',
+					},
+					{
+						name: 'Tracking',
+						value: 'tracking',
 					},
 				],
-				default: 'httpVerb',
+				default: 'customer',
 			},
+			// Operation
 		],
 	};
 }
