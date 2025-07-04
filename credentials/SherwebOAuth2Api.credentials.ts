@@ -1,8 +1,9 @@
-import { ICredentialType, INodeProperties } from 'n8n-workflow';
+import { ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
 
 export class SherwebOAuth2Api implements ICredentialType {
 	name = 'sherwebOAuth2Api';
 	extends = ['oAuth2Api'];
+	icon = 'file:Sherweb.svg' as Icon;
 	displayName = 'Sherweb OAuth2 API';
 	documentationUrl = 'https://developers.sherweb.com/apis';
 	properties: INodeProperties[] = [
