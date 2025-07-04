@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      n8n-workflow:
-        specifier: '*'
-        version: 1.82.0
     devDependencies:
       '@typescript-eslint/parser':
         specifier: ~8.32.0
@@ -24,6 +20,9 @@ importers:
       gulp:
         specifier: ^5.0.0
         version: 5.0.1
+      n8n-workflow:
+        specifier: ^1.82.0
+        version: 1.82.0
       prettier:
         specifier: ^3.5.3
         version: 3.6.2
