@@ -1,14 +1,14 @@
 import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 
-import { customerOperations } from './descriptions/CustomerDescription';
-import { customerCatalogsOperations, customerCatalogsFields } from './descriptions/CustomerCatalogs.Description';
-import { customerPlatformsOperations, customerPlatformsFields } from './descriptions/CustomerPlatformsDescription';
-import { platformsOperations, platformsFields } from './descriptions/PlatformsDescription';
-import { subscriptionsOperations, subscriptionsFields } from './descriptions/SubscriptionsDescription';
-import { trackingOperations, trackingFields } from './descriptions/TrackingDescription';
-import { receivableChargesOperations, receivableChargesFields } from './descriptions/ReceivableChargesDescription';
-import { ordersOperations, ordersFields } from './descriptions/OrdersDescription';
-import { payableChargesOperations, payableChargesFields } from './descriptions/PayableChargesDescription';
+import { customerOperations } from './descriptions/ServiceProviderAPIDescriptions/CustomerDescription';
+import { customerCatalogsOperations, customerCatalogsFields } from './descriptions/ServiceProviderAPIDescriptions/CustomerCatalogs.Description';
+import { customerPlatformsOperations, customerPlatformsFields } from './descriptions/ServiceProviderAPIDescriptions/CustomerPlatformsDescription';
+import { platformsOperations, platformsFields } from './descriptions/ServiceProviderAPIDescriptions/PlatformsDescription';
+import { subscriptionsOperations, subscriptionsFields } from './descriptions/ServiceProviderAPIDescriptions/SubscriptionsDescription';
+import { trackingOperations, trackingFields } from './descriptions/ServiceProviderAPIDescriptions/TrackingDescription';
+import { receivableChargesOperations, receivableChargesFields } from './descriptions/ServiceProviderAPIDescriptions/ReceivableChargesDescription';
+import { ordersOperations, ordersFields } from './descriptions/ServiceProviderAPIDescriptions/OrdersDescription';
+import { payableChargesOperations, payableChargesFields } from './descriptions/DistributerAPIDescriptions/PayableChargesDescription';
 
 export class Sherweb implements INodeType {
 	description: INodeTypeDescription = {
