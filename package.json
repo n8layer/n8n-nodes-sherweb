@@ -9,7 +9,7 @@
   "homepage": "https://www.n8layer.io",
   "author": {
     "name": "n8layer",
-    "email": "support@n8layer.io"
+    "email": "robertb@elasticit.com"
   },
   "publishConfig": {
     "access": "public"

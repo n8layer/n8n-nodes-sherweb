@@ -25,6 +25,22 @@ export const payableChargesOperations: INodeProperties[] = [
 							date: '={{ $parameter.date }}',
 						},
 					},
+					output: {
+						postReceive: [
+							{
+								type: 'setKeyValue',
+								properties: {
+									extractedCharges: '={{ $parameter.extractCharges ? $response.body.charges : [$response.body] }}',
+								},
+							},
+							{
+								type: 'rootProperty',
+								properties: {
+									property: 'extractedCharges',
+								},
+							},
+						],
+					},
 				},
 			},
 		],
@@ -39,6 +55,18 @@ export const payableChargesFields: INodeProperties[] = [
 		type: 'string',
 		default: '2025-01-01',
 		description: 'Format - date (as full-date in RFC3339). Specify a date within the desired billing period. Format: yyyy-MM-dd (UTC). Default: Today. For example, if the date is March 17th and your billing period is from the 1st to the 31st of the month, it will return data from March 1st to March 31st.',
+		displayOptions: {
+			show: {
+				operation: ['getPayableCharges'],
+			},
+		},
+	},
+	{
+		displayName: 'Extract Charges',
+		name: 'extractCharges',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to extract the charges from the response',
 		displayOptions: {
 			show: {
 				operation: ['getPayableCharges'],
